@@ -10,9 +10,11 @@ const Navbar = () => {
 
     return (
         <div className="flex justify-between items-center border-b py-3 px-4"> {/* Ensure padding for spacing */}
+        <div className="text-3xl">
             <Link to="/">
-                <img src="/src/book.png" width={30} alt="Book Icon" />
+                <p>⭐️</p>
             </Link>
+        </div>
             <div className="flex items-center gap-3"> {/* Ensure items in this div are also centered */}
                 <div className='about'>
                     <Link to="/about">About</Link>
