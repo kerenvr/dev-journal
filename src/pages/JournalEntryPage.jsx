@@ -38,7 +38,7 @@ export default function JournalEntry() {
         };
 
         try {
-            const response = await fetch('https://dev-journal-1.onrender.com/api/posts/create', { // post onto db
+            const response = await fetch('https://dev-journal-1.onrender.com/posts/create', { // post onto db
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
