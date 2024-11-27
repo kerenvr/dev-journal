@@ -6,12 +6,12 @@ export default defineConfig({
     server: {
         proxy: {
             '/api': {
-                target: 'http://localhost:3000',
+                target: 'https://kevilla.com',
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/api/, ''),
             },
             '/send-email': {
-                target: 'http://localhost:3000',
+                target: 'https://kevilla.com',
                 changeOrigin: true,
                 rewrite: (path) => path.replace(/^\/send-email/, '/send-email'),
             },
