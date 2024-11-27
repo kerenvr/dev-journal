@@ -8,6 +8,11 @@ const AboutPage = () => {
                 alt="Description of the image" 
                 className="h-64 rounded-lg shadow-lg"
             />
+          <img 
+                src="https://avatars.githubusercontent.com/u/119133399?v=4" 
+                alt="Avatar" 
+                className="h-18 rounded-lg shadow-lg"
+            />
           <p>My name is Keren Villatoro and I am a university student studying Computer Science.</p>
         </div>
       </>
