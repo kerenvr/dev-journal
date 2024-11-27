@@ -19,7 +19,7 @@ const BlogPage = () => {
   useEffect(() => {
     const fetchPosts = async () => {
         try {
-            const response = await fetch('/api/posts/entries');
+            const response = await fetch('https://kevilla.com/api/posts/entries');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
