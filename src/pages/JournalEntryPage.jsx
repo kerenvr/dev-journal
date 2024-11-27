@@ -6,12 +6,13 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { slugifySentences } from "../utils";
 
 export default function JournalEntry() {
-    const [publishing, setPublishing] = useState(false); // to update button text
-    const [content, setContent] = useState(""); // journal entry
-    const [title, setTitle] = useState(""); // title
+    const [publishing, setPublishing] = useState(false); // To update button text
+    const [content, setContent] = useState(""); // Journal entry
+    const [title, setTitle] = useState(""); // Title
     const [error, setError] = useState(null); // State for error handling
+    const [successMessage, setSuccessMessage] = useState(""); // State for success message
 
-    const { user } = useAuth0(); // to get user name and user id
+    const { user } = useAuth0(); // To get user name and user id
 
     const onChangeContent = useCallback((value) => {
         setContent(value);
@@ -25,7 +26,7 @@ export default function JournalEntry() {
         e.preventDefault();
         setPublishing(true); // Set publishing state
 
-        const author = user.nickname; 
+        const author = user.nickname;
         const authorId = user.sub; // Auth0 user ID
         const slug = slugifySentences(title); // Create slug from title
 
@@ -38,7 +39,7 @@ export default function JournalEntry() {
         };
 
         try {
-            const response = await fetch('https://dev-journal-1.onrender.com/posts/create', { // post onto db
+            const response = await fetch('https://dev-journal-1.onrender.com/posts/create', { // Post to DB
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -50,14 +51,16 @@ export default function JournalEntry() {
                 throw new Error('Network response was not ok');
             }
 
-            // const data = await response.json();
-            // console.log('Post created:', data);
-            // // clear the form or update the UI
-            // setTitle('');
-            // setContent('');
+            // If the post is successfully created, show success message
+            setSuccessMessage('Post successfully created!');
+            
+            // Clear the form (optional)
+            setTitle('');
+            setContent('');
+
         } catch (error) {
             console.error('Error creating post:', error);
-            setError('Failed to create post. Please try again.'); 
+            setError('Failed to create post. Please try again.');
         } finally {
             setPublishing(false); // Reset publishing state
         }
@@ -86,6 +89,7 @@ export default function JournalEntry() {
                     <SimpleMDE value={content} onChange={onChangeContent} id='content' />
 
                     {error && <p className='text-red-500'>{error}</p>} {/* Display error message */}
+                    {successMessage && <p className='text-green-500'>{successMessage}</p>} {/* Display success message */}
 
                     <button
                         type='submit'
