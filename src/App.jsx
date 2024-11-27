@@ -20,13 +20,7 @@ function App() {
           <Routes>        
             <Route path="/"  element={<HomePage/>} />
             <Route path="/about"  element={<AboutPage />}/>
-            <Route 
-              path="/blog"  
-              element={
-                <ProtectedRoute>
-                  <BlogPage/>
-                </ProtectedRoute>}
-            />
+            <Route path="/blog" element={<BlogPage/>}/>
             <Route path="/newsletter"  element={<NewsletterPage/>}/>
             <Route path="/callback"  element={<CallbackPage/>}/>
             <Route path="/journal/create"  element={<JournalEntry/>}/>
