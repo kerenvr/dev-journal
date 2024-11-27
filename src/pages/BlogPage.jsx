@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Accordion from "../components/accordion/Accordion"
-import { useAuth0 } from "@auth0/auth0-react";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const { user } = useAuth0();
-
-  console.log(user);
-
-  if (!user) {
-      return null; // Optionally render a loading state
-  }
 
   const toggleAccordion = (id) => {
     setPosts(
