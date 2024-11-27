@@ -3,21 +3,24 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy": "http://localhost:3000",
+  "proxy": "https://dev-journal-1.onrender.com",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "node server/server.js"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
+    "@neondatabase/serverless": "^0.10.4",
     "@sendgrid/mail": "^8.1.4",
     "cors": "^2.8.5",
     "date-fns": "^4.1.0",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.35.3",
     "easymde": "^2.18.0",
+    "express": "^4.21.1",
     "nodemailer": "^6.9.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
