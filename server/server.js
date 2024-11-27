@@ -39,8 +39,8 @@ app.get('/posts/entries', async (req, res) => {
     }
 });
 
-// Add the email routes under the '/api' prefix
-app.use('/api', emailRoutes); // Now you can call /api/send-email
+// add email routes under the '/api' prefix
+app.use('/api', emailRoutes); // now i can call /api/send-email
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

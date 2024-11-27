@@ -11,7 +11,7 @@ const sendEmail = async (to, subject, text) => {
         secure: false, // true for 465, false for other ports
         auth: {
             user: 'apikey',
-            pass: process.env.SENDGRID_API_KEY, // Use your SendGrid API key
+            pass: process.env.SENDGRID_API_KEY, 
         },
     });
 
