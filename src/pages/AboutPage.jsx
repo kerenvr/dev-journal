@@ -9,10 +9,11 @@ const AboutPage = () => {
                 className="h-64 rounded-lg shadow-lg"
             />
           <img 
-                src="https://avatars.githubusercontent.com/u/119133399?v=4" 
-                alt="Avatar" 
-                className="h-18 rounded-lg shadow-lg"
-            />
+              src="https://avatars.githubusercontent.com/u/119133399?v=4" 
+              alt="Avatar" 
+              className="h-12 w-12 rounded-full shadow-lg"
+          />
+
           <p>My name is Keren Villatoro and I am a university student studying Computer Science.</p>
         </div>
       </>
