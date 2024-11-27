@@ -11,7 +11,7 @@ const Newsletter = () => {
         setIsSubmitting(true);
 
         try {
-            const response = await fetch('/api/send-email', {
+            const response = await fetch('https://dev-journal-1.onrender.com/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
