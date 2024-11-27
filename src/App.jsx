@@ -5,14 +5,13 @@ import BlogPage from "./pages/BlogPage"
 import HomePage from "./pages/HomePage"
 import JournalPage from "./pages/JournalPage"
 import NewsletterPage from "./pages/NewsletterPage"
-import { BrowserRouter, Route,Routes } from 'react-router-dom';
+import { Route,Routes } from 'react-router-dom';
 import { CallbackPage } from "./pages/callback-page";
 import JournalEntry from "./pages/JournalEntryPage"
 import ProtectedRoute from "./pages/ProtectedRoute"
 
 function App() {
   return (
-    <BrowserRouter>
     <div className="mx-auto">
       <Navbar />
       <div>
@@ -29,7 +28,6 @@ function App() {
         </div>
       </div>
     </div>
-    </BrowserRouter>
   )
 }
 
