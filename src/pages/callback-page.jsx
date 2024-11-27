@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const CallbackPage = () => {
+export const CallbackPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -32,4 +32,3 @@ const CallbackPage = () => {
   );
 };
 
-export default CallbackPage;
